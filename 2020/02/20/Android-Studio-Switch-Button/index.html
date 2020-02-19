@@ -13,6 +13,12 @@
     
 
     
+        <meta name="description" content="Android StudioSwitch On/Off Button
+activity_main.xml
+&amp;lt;Switch
+    android:id=&amp;quot;@+id/switch1&amp;quot;
+    android:layout_width = &amp;quot;wrap_content&amp;"/>
+    
 
     <!--Author-->
     
@@ -21,10 +27,16 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="HYONISSS TIL"/>
+        <meta property="og:title" content="Android Studio - Switch Button"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Android StudioSwitch On/Off Button
+activity_main.xml
+&amp;lt;Switch
+    android:id=&amp;quot;@+id/switch1&amp;quot;
+    android:layout_width = &amp;quot;wrap_content&amp;"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +44,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +63,7 @@
 
     <!-- Title -->
     
-    <title>Android Studio - HYONISSS TIL</title>
+    <title>Android Studio - Switch Button - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,62 +167,95 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#Android Studio</h1>
+                <div class="post-heading">
+                    <h1>Android Studio - Switch Button</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-20
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Android-Studio/">#Android Studio</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/02/20/Android-Studio-Switch-Button/">
-        <h1 class="post-title archive">
-            Android Studio - Switch Button
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-20
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2020/02/18/Android-Studio-Toast/">
-        <h1 class="post-title archive">
-            Android Studio - Toast
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-18
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h1><h3 id="Switch-On-Off-Button"><a href="#Switch-On-Off-Button" class="headerlink" title="Switch On/Off Button"></a>Switch On/Off Button</h3><hr>
+<p><strong>activity_main.xml</strong></p>
+<pre><code>&lt;Switch
+    android:id=&quot;@+id/switch1&quot;
+    android:layout_width = &quot;wrap_content&quot;
+    android:layout_height = &quot;wrap_content&quot;
+    anrdoid:switchMinWidth=&quot;56dp&quot;
+    android:checked=&quot;true&quot;/&gt;</code></pre><p><strong>MainActivity.java</strong></p>
+<pre>
+<code>
+public class MainActivity extends AppCompatActiity {
+    private Switch sw1;
+    protected void onCeate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        sw1 = (Switch) findViewById(R.id.switch1);
+        }
+}
+</code>
+</pre>
+
+<hr>
+<p>생각보다 간단한 코드<br>다음번엔 스위치가 켜져있을때 상태 알려주는 Toast메시지도 해봐야겠다</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
