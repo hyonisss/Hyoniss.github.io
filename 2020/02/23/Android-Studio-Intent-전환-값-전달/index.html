@@ -13,6 +13,16 @@
     
 
     
+        <meta name="description" content="Android StudioIntent로 Activity 전환 및 값 전달
+오늘은 xml은 생략.
+
+ Intent 전환
+
+MainActivity.java
+
+
+Intent intent = new Intent(MainActivity.this, SecondActivity.cl"/>
+    
 
     <!--Author-->
     
@@ -21,10 +31,20 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="HYONISSS TIL"/>
+        <meta property="og:title" content="Android Studio - Intent"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Android StudioIntent로 Activity 전환 및 값 전달
+오늘은 xml은 생략.
+
+ Intent 전환
+
+MainActivity.java
+
+
+Intent intent = new Intent(MainActivity.this, SecondActivity.cl"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +52,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +71,7 @@
 
     <!-- Title -->
     
-    <title>HYONISSS TIL</title>
+    <title>Android Studio - Intent - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -156,180 +176,130 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>HYONISSS TIL</h1>
-                    <hr class="small">
-                    <span class="subheading">오늘 배운 건 오늘 기록하자</span>
+                <div class="post-heading">
+                    <h1>Android Studio - Intent</h1>
+                    
+                    <h2 class="post-subheading">
+                        Activity 전환/ 데이터 전달
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-23
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2020/02/23/Android-Studio-Intent-전환-값-전달/">
-        <h2 class="post-title">
-            Android Studio - Intent
-        </h2>
-        
-            <h3 class="post-subtitle">
-                Activity 전환/ 데이터 전달
-            </h3>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-23
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/23/Android-Studio-Intent-전환-값-전달/">
-        <h2 class="post-title">
-            Android Studio - Intent
-        </h2>
-        
-            <h3 class="post-subtitle">
-                Activity 전환/ 데이터 전달
-            </h3>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-23
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/20/Android-Studio-Switch-Button/">
-        <h2 class="post-title">
-            Android Studio - Switch Button
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-20
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/18/Android-Studio-Toast/">
-        <h2 class="post-title">
-            Android Studio - Toast
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-18
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/17/Github-사용법/">
-        <h2 class="post-title">
-            Github 사용법
-        </h2>
-        
-            <h3 class="post-subtitle">
-                Git bash 이용하여 간편하게 업로드 하기
-            </h3>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/17/Github-사용법/">
-        <h2 class="post-title">
-            Github 사용법
-        </h2>
-        
-            <h3 class="post-subtitle">
-                Git bash 이용하여 간편하게 업로드 하기
-            </h3>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/17/post-clean-blog/">
-        <h2 class="post-title">
-            clean-blog 테마를 적용하다.
-        </h2>
-        
-            <h3 class="post-subtitle">
-                처음으로 테마를 적용해보다.
-            </h3>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/17/hello-world/">
-        <h2 class="post-title">
-            Hexo 이용하여 포스트 업로드 하는 법
-        </h2>
-        
-            <h3 class="post-subtitle">
-                Git bash 이용하기
-            </h3>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/java/">#java</a> <a href="/tags/Android-Studio/">#Android Studio</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
 
-            <ul class="pager">
-    
-    
-</ul>
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Android-Studio"><a href="#Android-Studio" class="headerlink" title="Android Studio"></a>Android Studio</h1><h3 id="Intent로-Activity-전환-및-값-전달"><a href="#Intent로-Activity-전환-및-값-전달" class="headerlink" title="Intent로 Activity 전환 및 값 전달"></a>Intent로 Activity 전환 및 값 전달</h3><hr>
+<p>오늘은 xml은 생략.</p>
+<blockquote>
+<p> Intent 전환</p>
+</blockquote>
+<p><strong>MainActivity.java</strong></p>
+<pre>
+<code>
+Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+Button button = findViewById(R.id.button);
+button. setOnClickLinstener(new View.OnClickListener)() {
+public void onClick(View view) {
+startActivity(intent);
+}
+});
+</code>
+</pre>
+
+<p>버튼을 누르면 intent가 수행되고, MainActivity위에 SecondActivity가 로드된다.<br>setOnClickListenr가 버튼을 누른 뒤 실행되는 코드를 써주면 되는 곳이다.   </p>
+<p>그냥 Activity 전환은 간단한데 값 전달하기가 조금 까다롭게 느껴졌다.</p>
+<hr>
+<blockquote>
+<p>Intent로 값 전달하기</p>
+</blockquote>
+<p><strong>MainActivity.java</strong></p>
+<p>MainAcitivy에서 SecondActivity로 간단한 자료형(int, String, Boolean 등)의 데이터를 intent에 포함하여 전달할 수 있다.<br>인텐트를 정의한 후, putExtra를 이용해서 담을 수 있다. </p>
+<pre>
+<code>
+public class MainActivity extends AppCompatActivity {
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+
+Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+intent.putExtra("번호", 12345);
+intent.putExtra("메시지", "이것은 메시지입니다");
+
+}
+}
+</code>
+</pre>
+
+<p>여기서 putEatra(Key, Value) 형식으로 담아야 한다.<br>Key는 항상 String 형태, Value에는 int, String 등 다양하게 올 수 있다.   </p>
+<p><strong>SecondActivity.java</strong></p>
+<pre><code>Intent intent2 = getIntent();
+intent2.getIntExtra(&quot;번호&quot;, 0);
+intent2.getStringExtra(&quot;메시지&quot;);</code></pre><p> int의 경우 value에 default 값을 적어준다.   </p>
+<p> 여기서 만약, SecondActivity에 있는 TextView에 MainActivity에서 받은 String값으로 바꾸고 싶다면 다음과 같이 하면 된다.   </p>
+<p><strong>SecondAcitivity.java</strong></p>
+<pre><code>TextView tv = findViewById(R.id.textView);
+
+Intent intent2 = getIntent();
+String message = intent2.getStringExtra(&quot;메시지&quot;);
+
+tv.setText(message);</code></pre><p>String 변수를 선언해서 String 값을 받고 setText를 이용해 화면에 출력하는 방식이다.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
