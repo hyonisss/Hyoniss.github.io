@@ -13,6 +13,14 @@
     
 
     
+        <meta name="description" content="프로그래머스 Hash(2)전화번호 목록
+
+
+import java.util.*;
+class Solution {
+    public boolean solution(String[] phone_book) {
+        boolean answer = true;        "/>
+    
 
     <!--Author-->
     
@@ -21,10 +29,18 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="HYONISSS TIL"/>
+        <meta property="og:title" content="프로그래머스 Hash2(Java)"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="프로그래머스 Hash(2)전화번호 목록
+
+
+import java.util.*;
+class Solution {
+    public boolean solution(String[] phone_book) {
+        boolean answer = true;        "/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +48,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +67,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives: 2020/2 - HYONISSS TIL</title>
+    <title>프로그래머스 Hash2(Java) - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,90 +171,103 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2020/2</h1>
+                <div class="post-heading">
+                    <h1>프로그래머스 Hash2(Java)</h1>
+                    
+                    <h2 class="post-subheading">
+                        전화번호 목록
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-27
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/java/">#java</a> <a href="/tags/algorithm/">#algorithm</a> <a href="/tags/programmers/">#programmers</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/02/17/Github-사용법/">
-        <h1 class="post-title archive">
-            Github 사용법
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2020/02/17/Github-사용법/">
-        <h1 class="post-title archive">
-            Github 사용법
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="프로그래머스-Hash-2"><a href="#프로그래머스-Hash-2" class="headerlink" title="프로그래머스 Hash(2)"></a>프로그래머스 Hash(2)</h2><h4 id="전화번호-목록"><a href="#전화번호-목록" class="headerlink" title="전화번호 목록"></a>전화번호 목록</h4><hr>
+<pre>
+<code>
+import java.util.*;
+class Solution {
+    public boolean solution(String[] phone_book) {
+        boolean answer = true;                          
+        Arrays.sort(phone_book);
+        for(int i=0; i<phone_book.length-1; i++) {      //-1을 하지 않으면 OverException이 일어남
+            if(phone_book[i+1].startsWith(phone_book[i])) answer = false;
+        }
+
+        return answer;
+    }
+}
+</code>
+</pre>
+
+<p>다 작성해놓고 주석처리한 부분에서 -1을 하지 않아서 계속 오류가 났다.</p>
+<hr>
+<p><strong>자바에서 배열정리</strong></p>
+<pre><code>Arrays.sort(배열이름);</code></pre><p>오름차순으로 정렬해준다.</p>
+<p>[“23”, “123”, “234”] 라는 배열을 위의 함수를 이용해 정렬하면<br>[“123”, “23”, “234”]가 되는 것이다.</p>
+<p>이번 문제도 정렬을 먼저 해주게 되면 for문을 두번 사용해주지 않아도 된다.</p>
+<p><strong>어떤 문자로 시작하는지 판별</strong></p>
+<pre><code>String st1, st2;
+st1.startsWith(st2);</code></pre><p>st1문자열이 st2문자열로 시작하는지 확인하는 코드이다.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2020/02/17/post-clean-blog/">
-        <h1 class="post-title archive">
-            clean-blog 테마를 적용하다.
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/02/17/hello-world/">
-        <h1 class="post-title archive">
-            Hexo 이용하여 포스트 업로드 하는 법
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2020/02/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
