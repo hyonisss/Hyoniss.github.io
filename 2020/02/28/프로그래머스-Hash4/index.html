@@ -13,6 +13,16 @@
     
 
     
+        <meta name="description" content="프로그래머스 Hash(4)베스트 앨범
+
+
+import java.util.*;
+class Solution {
+    public int[] solution(String[] genres, int[] plays) {
+        int[] answer = {};
+
+    "/>
+    
 
     <!--Author-->
     
@@ -21,10 +31,20 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="HYONISSS TIL"/>
+        <meta property="og:title" content="프로그래머스-Hash4(Java)"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="프로그래머스 Hash(4)베스트 앨범
+
+
+import java.util.*;
+class Solution {
+    public int[] solution(String[] genres, int[] plays) {
+        int[] answer = {};
+
+    "/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +52,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +71,7 @@
 
     <!-- Title -->
     
-    <title>algorithm - HYONISSS TIL</title>
+    <title>프로그래머스-Hash4(Java) - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,88 +175,157 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#algorithm</h1>
+                <div class="post-heading">
+                    <h1>프로그래머스-Hash4(Java)</h1>
+                    
+                    <h2 class="post-subheading">
+                        베스트 앨범
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-28
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/java/">#java</a> <a href="/tags/algorithm/">#algorithm</a> <a href="/tags/programmers/">#programmers</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/02/28/프로그래머스-Hash4/">
-        <h1 class="post-title archive">
-            프로그래머스-Hash4(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-28
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2020/02/27/프로그래머스-Hash3/">
-        <h1 class="post-title archive">
-            프로그래머스-Hash3(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/02/27/프로그래머스-Hash2/">
-        <h1 class="post-title archive">
-            프로그래머스 Hash2(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/02/27/프로그래머스-Hash-1/">
-        <h1 class="post-title archive">
-            프로그래머스-Hash1(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-27
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="프로그래머스-Hash-4"><a href="#프로그래머스-Hash-4" class="headerlink" title="프로그래머스 Hash(4)"></a>프로그래머스 Hash(4)</h2><h4 id="베스트-앨범"><a href="#베스트-앨범" class="headerlink" title="베스트 앨범"></a>베스트 앨범</h4><hr>
+<pre>
+<code>
+import java.util.*;
+class Solution {
+    public int[] solution(String[] genres, int[] plays) {
+        int[] answer = {};
+
+        //장르 데이터 저장
+        HashMap<String, Integer> hash = new HashMap<String, Integer> ();
+        for(int i=0; i<genres.length; i++) { //장르별 재생수 합하기
+            if(hash.containsKey(genres[i])) { 
+                hash.put(genres[i], hash.get(genres[i])+plays[i]); //재생수 누적
+            }
+            else hash.put(genres[i], plays[i]); //처음 input되는 장르일 경우 0 세팅  
+        }
+
+        // 플레이 횟수 가장 많은 장르 구하기
+        answer = new int[hash.size()*2];
+
+  for(int j=0; !hash.isEmpty(); j += 2) {
+        String ans_genre = "";
+        int ans_num_genre = 0;
+
+        for(String key: hash.keySet()) {
+            if(hash.get(key)>ans_num_genre) {
+                ans_genre = key;
+                ans_num_genre = hash.get(key);
+
+            }
+        }
+
+
+      //재생수비교..
+    // 플레이수 가장 많은 장르안에서 많이 재생된 노래 찾기
+            int ans_num1_play = 0;
+            int ans_num2_play = 0;
+            int cnt = 0;
+        for(int i=0; i<genres.length; i++) {
+            if(genres[i].equals(ans_genre)) {
+                if(plays[i]>ans_num1_play) {  //재생수 가장 많은 장르 안에서 1등 가리기
+
+                    answer[j+1] = answer[j]; //우선 1등에 있던거 2등 넣어놓기
+                    answer[j] = i;  //1등 인덱스 저장
+                    ans_num2_play = ans_num1_play;
+                    ans_num1_play = plays[i];
+
+                }
+
+                else if(plays[i]>ans_num2_play)  {  // 2등 가리기 
+                   answer[j+1] = i;
+                    ans_num2_play=plays[i];
+                } 
+            }
+        }
+        hash.remove(ans_genre);          
+  }
+
+        return answer;
+    }
+}
+
+</code>
+</pre>
+
+<hr>
+<ul>
+<li>실수한 부분</li>
 </ul>
+<p>문자열이 같은지 아닌지 비교할 때는 <strong>==</strong> 사용하지 말고, 아래처럼 할 것!</p>
+<pre><code>str1.equals(st2);   </code></pre><ul>
+<li>해시 키 개수 구하는 함수</li>
+</ul>
+<p>중복 제외하고 integer 값을 리턴한다.</p>
+<pre><code>hash.size();   </code></pre><ul>
+<li>해시 삭제</li>
+</ul>
+<p>데이터도 삭제하지만, 키 값도 동시에 삭제된다는 것은 새로 알았다.</p>
+<pre><code>hash.remove(키값);   </code></pre><hr>
+<p>아직 미완성<br>테스트 케이스 추가하면 오류가 난다</p>
+<p><strong>TO DO</strong> : 큐랑 리스트 배우고 와서 다시 하기</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
