@@ -13,6 +13,17 @@
     
 
     
+        <meta name="description" content="프로그래머스 스택/큐(1)탑
+
+나의 풀이 (LinkedList 사용)   
+
+
+
+import java.util.*;
+class Solution {
+    public int[] solution(int[] heights) {
+        int[] answer = ne"/>
+    
 
     <!--Author-->
     
@@ -21,10 +32,21 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="HYONISSS TIL"/>
+        <meta property="og:title" content="프로그래머스-스택/큐1"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="프로그래머스 스택/큐(1)탑
+
+나의 풀이 (LinkedList 사용)   
+
+
+
+import java.util.*;
+class Solution {
+    public int[] solution(int[] heights) {
+        int[] answer = ne"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +54,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +73,7 @@
 
     <!-- Title -->
     
-    <title>algorithm - HYONISSS TIL</title>
+    <title>프로그래머스-스택/큐1 - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,101 +177,136 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#algorithm</h1>
+                <div class="post-heading">
+                    <h1>프로그래머스-스택/큐1</h1>
+                    
+                    <h2 class="post-subheading">
+                        탑
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-29
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/java/">#java</a> <a href="/tags/algorithm/">#algorithm</a> <a href="/tags/programmers/">#programmers</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/02/29/프로그래머스-스택-큐1/">
-        <h1 class="post-title archive">
-            프로그래머스-스택/큐1
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-29
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2020/02/28/프로그래머스-Hash4/">
-        <h1 class="post-title archive">
-            프로그래머스-Hash4(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/02/27/프로그래머스-Hash3/">
-        <h1 class="post-title archive">
-            프로그래머스-Hash3(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/02/27/프로그래머스-Hash2/">
-        <h1 class="post-title archive">
-            프로그래머스 Hash2(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/02/27/프로그래머스-Hash-1/">
-        <h1 class="post-title archive">
-            프로그래머스-Hash1(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-27
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="프로그래머스-스택-큐-1"><a href="#프로그래머스-스택-큐-1" class="headerlink" title="프로그래머스 스택/큐(1)"></a>프로그래머스 스택/큐(1)</h2><h4 id="탑"><a href="#탑" class="headerlink" title="탑"></a>탑</h4><hr>
+<blockquote>
+<p>나의 풀이 (LinkedList 사용)   </p>
+</blockquote>
+<pre>
+<code>
+import java.util.*;
+class Solution {
+    public int[] solution(int[] heights) {
+        int[] answer = new int[heights.length]; //heights 배열 길이만큼 answer 배열 초기화
+        LinkedList<Integer> stack = new LinkedList<Integer> (); //스택 선언
+        for(int k : heights) stack.addLast(k);   // heights 배열을 스택에 넣어줌
+        for(int j = heights.length; j >=1 ;j--) {          
+            int last = stack.removeLast();        
+            for(int i = 1; i<=stack.size(); i++) {             
+                if(last < heights[j-i-1]) {             // 현재의 last(마지막 등대의 높이)값 보다 높은 등대가 있으면 
+                   answer[j-1] = j-i;                   // 배열에 몇 번째 등대인지 저장하고 안에 for문을 빠져나감 
+                   break;
+               }
+               else if(i==stack.size())       // 다 비교해봤는데 현재의 last 보다 큰 등대가 없다를 판별해주는 조건문
+                   answer[j-1] = 0;            // 그럼 0을 저장
+            }
+        }
+        return answer;
+    }
+}
+</code>
+</pre>
+
+<hr>
+<ul>
+<li>스택 사용   </li>
 </ul>
+<p>왼쪽으로 등을 쏜다는 문제에서 LIFO 를 사용하기 위해 스택을 사용하였음<br>제일 밖에 있는 for문의 j는 answer 배열의 index값을 계산하기 위한 것.</p>
+<p><strong>반복문 빠져나오기</strong></p>
+<pre><code>break;</code></pre><hr>
+<blockquote>
+<p>다른 사람 풀이 (Stack 사용)   </p>
+</blockquote>
+<p>스택을 사용하니 풀이가 더 깔끔하다.</p>
+<pre><code>import java.util.Stack;
+class Solution {
+    public int[] solution(int[] heights) {
+        Stack&lt;Integer&gt;stk=new Stack&lt;&gt;();
+        int[] answer = new int[heights.length];
+        for(int i=0;i&lt;heights.length;i++) {             // 스택에 배열 데이터 저장
+            stk.push(heights[i]);
+
+        }
+        while(!stk.isEmpty()) {                        // 첫번째 탑까지 다 비교
+            int tmp=stk.pop();                         // 바로 왼쪽에 있는 탑부터 비교
+
+            for(int i=stk.size();i&gt;=0;i--) {           
+                if(tmp&lt;heights[i]) {                   // 더 큰 탑이 있다면
+                    answer[stk.size()]=i+1;            // 몇번째 탑(i+1)인지 저장
+                    break;
+                }
+            }
+
+
+        }</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
