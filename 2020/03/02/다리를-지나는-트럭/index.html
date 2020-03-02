@@ -13,6 +13,8 @@
     
 
     
+        <meta name="description" content="import java.util.*;class Solution {    public int solution(int bridge_length, int weight, int[] truck_weights) {        Queue queue = new LinkedList ("/>
+    
 
     <!--Author-->
     
@@ -21,10 +23,12 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="HYONISSS TIL"/>
+        <meta property="og:title" content="다리를 지나는 트럭"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="import java.util.*;class Solution {    public int solution(int bridge_length, int weight, int[] truck_weights) {        Queue queue = new LinkedList ("/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives: 2020 - HYONISSS TIL</title>
+    <title>다리를 지나는 트럭 - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,103 +159,77 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2020</h1>
+                <div class="post-heading">
+                    <h1>다리를 지나는 트럭</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-03-02
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2020/02/20/Android-Studio-Switch-Button/">
-        <h1 class="post-title archive">
-            Android Studio - Switch Button
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-20
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>import java.util.*;<br>class Solution {<br>    public int solution(int bridge_length, int weight, int[] truck_weights) {<br>        Queue<Integer> queue = new LinkedList<Integer> ();<br>        int answer = 0;<br>        for(int truck: truck_weights) {<br>            for(int i=0; i&lt;bridge_length; i++) {<br>                if(queue.)<br>            }<br>            while(queue.size()&lt;=length) </p>
+<pre><code>        if(queue.isEmpty()) { //다리를 건너는 트럭이 없으면 트럭 집어넣기
+            queue.offer(truck);
+        }
+        else {        
+
+            //다리를 건너는 트럭이 있으면 다음 실행
+            while(!queue.isEmpty()) { //트럭 무게 고려 조건문
+                int cur_weight += queue.peek(); //다리 위의 트럭 무게 다 더하기
+                int to_weight = truck + cur_weight; //새로 들어갈 트럭 무게까지 더하기
+                 if(to_weight&lt;=weight) {//그 무게의 합이 다리가 견디는 무게보다 작거나 같으면
+                     queue.offer(truck); //현재 트럭 집어 넣기
+                }
+
+            }
+        }          
+    }      
+    return answer;
+}</code></pre><p>}</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2020/02/18/Android-Studio-Toast/">
-        <h1 class="post-title archive">
-            Android Studio - Toast
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-18
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/02/17/Github-사용법/">
-        <h1 class="post-title archive">
-            Github 사용법
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/02/17/post-clean-blog/">
-        <h1 class="post-title archive">
-            clean-blog 테마를 적용하다.
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/02/17/hello-world/">
-        <h1 class="post-title archive">
-            Hexo 이용하여 포스트 업로드 하는 법
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-02-17
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/2020/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
