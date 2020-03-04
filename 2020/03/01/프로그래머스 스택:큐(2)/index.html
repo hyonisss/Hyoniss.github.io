@@ -13,12 +13,17 @@
     
 
     
-        <meta name="description" content="#
-public class Solution {
-public int solution(int m, int n, int[][] puddles) {
-    /* 웅덩이 초기화 */
-    boolean[][] isPuddles = new boolean[n][m];
-    in"/>
+        <meta name="description" content="프로그래머스 스택/큐(2)다리를 지나는 트럭
+
+나의 풀이    
+
+
+
+import java.util.*;
+public class Truck {                //Truck이라는 Class 생성
+    int weight;
+    int distance;
+ "/>
     
 
     <!--Author-->
@@ -28,17 +33,22 @@ public int solution(int m, int n, int[][] puddles) {
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Stack/Queue(2) -등굣길"/>
+        <meta property="og:title" content="프로그래머스-스택/큐2(Java)"/>
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="#
-public class Solution {
-public int solution(int m, int n, int[][] puddles) {
-    /* 웅덩이 초기화 */
-    boolean[][] isPuddles = new boolean[n][m];
-    in"/>
+        <meta property="og:description" content="프로그래머스 스택/큐(2)다리를 지나는 트럭
+
+나의 풀이    
+
+
+
+import java.util.*;
+public class Truck {                //Truck이라는 Class 생성
+    int weight;
+    int distance;
+ "/>
     
 
     <!--Open Graph Site Name-->
@@ -65,7 +75,7 @@ public int solution(int m, int n, int[][] puddles) {
 
     <!-- Title -->
     
-    <title>Stack/Queue(2) -등굣길 - HYONISSS TIL</title>
+    <title>프로그래머스-스택/큐2(Java) - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -177,7 +187,11 @@ public int solution(int m, int n, int[][] puddles) {
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Stack/Queue(2) -등굣길</h1>
+                    <h1>프로그래머스-스택/큐2(Java)</h1>
+                    
+                    <h2 class="post-subheading">
+                        다리를 지나는 트럭
+                    </h2>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -199,45 +213,89 @@ public int solution(int m, int n, int[][] puddles) {
 
             <!-- Tags and categories -->
            
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/java/">#java</a> <a href="/tags/algorithm/">#algorithm</a> <a href="/tags/programmers/">#programmers</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
 
             <!-- Gallery -->
             
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>#</p>
-<p>public class Solution {</p>
-<pre><code>public int solution(int m, int n, int[][] puddles) {
-    /* 웅덩이 초기화 */
-    boolean[][] isPuddles = new boolean[n][m];
-    int[][] map = new int[n][m];
-    for (int i = 0; i &lt; puddles.length; i++)
-        isPuddles[puddles[i][1] - 1][puddles[i][0] - 1] = true;
-
-    boolean flag = true;
-    for(int i = 0; i &lt; m; i++) { 
-        if(isPuddles[0][i]) flag = false;
-        if(flag) map[0][i] = 1;
+                <h2 id="프로그래머스-스택-큐-2"><a href="#프로그래머스-스택-큐-2" class="headerlink" title="프로그래머스 스택/큐(2)"></a>프로그래머스 스택/큐(2)</h2><h4 id="다리를-지나는-트럭"><a href="#다리를-지나는-트럭" class="headerlink" title="다리를 지나는 트럭"></a>다리를 지나는 트럭</h4><hr>
+<blockquote>
+<p>나의 풀이    </p>
+</blockquote>
+<pre>
+<code>
+import java.util.*;
+public class Truck {                //Truck이라는 Class 생성
+    int weight;
+    int distance;
+    public Truck(int weight, int distance) {
+        this.weight = weight;
+        this.distance = distance;
     }
-
-    flag = true;
-    for(int i = 0; i &lt; n; i++) {
-        if(isPuddles[i][0]) flag = false;
-        if(flag) map[i][0] = 1;
-    }
-
-    for(int i = 1; i &lt; n; i++) 
-        for(int j = 1; j &lt; m; j++) 
-            if(!isPuddles[i][j]) 
-                map[i][j] = (map[i][j - 1] + map[i - 1][j]) % 1000000007;
-
-    return map[n - 1][m - 1];
 }
+class Solution {
+    public int solution(int bridge_length, int weight, int[] truck_weights) {
+        int answer = 0;                     // Time
+        Truck truck = null;                 //Truck을 담을 임시 변수
+        int weightLeft = weight;        //남은 견딜 수 있는 무게
 
-public static void main(String[] args) {
-    int[][] puddles = {{2, 2}, {3, 2}};
-    System.out.println(new Solution().solution(4, 3, puddles));
-}</code></pre><p>}</p>
+        Queue<Truck> wait = new LinkedList<Truck> (); 
+        List<Truck> inside = new ArrayList<Truck> ();
+
+        for(int t : truck_weights) {
+            wait.add(new Truck(t, bridge_length));
+        }
+
+        while(!(wait.isEmpty() && inside.isEmpty())) {
+            answer++;
+            if(!inside.isEmpty() && inside.get(0).distance<=0) { //다리 다 지난 트럭 빼내기
+            weightLeft += inside.get(0).weight; //빼낸만큼 남은 무게 증가
+                inside.remove(0);
+            }
+           if(!wait.isEmpty() && weightLeft - wait.peek().weight >= 0) { //대기중인 트럭 무게 체크 후 집어 넣기
+                weightLeft -= wait.peek().weight;
+                inside.add(wait.poll());
+            }
+            for(int i=0; i<inside.size(); i++) { //다리 위에 있는 트럭 distance 전부 1씩 감소
+                truck = inside.get(i);
+                truck.distance--;
+            }
+        }
+        return answer;
+    }
+}
+</code>
+</pre>   
+
+
+<hr>
+<blockquote>
+<p>알고리즘 해설</p>
+</blockquote>
+<ul>
+<li><p>대기중인 트럭 </p>
+<pre><code>Queue&lt;Truck&gt; wait = new LinkedList&lt;Truck&gt; (); </code></pre></li>
+</ul>
+<ul>
+<li><p>다리 위 트럭</p>
+<pre><code>List&lt;Truck&gt; inside = new ArrayList&lt;Truck&gt; ();</code></pre></li>
+</ul>
+<p>순차적으로 남은 거리를 for문을 통해 감소시켜주기 위해 ArrayList 사용<br>LinkedList를 사용할 수도 있지만, .get(i)연산을 할 때, ArrayList는 O(1), Linked List는 O(n)시간이 걸리므로 ArrayList를 사용.</p>
 
 
                 
