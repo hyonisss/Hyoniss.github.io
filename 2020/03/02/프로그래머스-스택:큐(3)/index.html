@@ -13,7 +13,18 @@
     
 
     
-        <meta name="description" content="import java.util.*;class Solution {    public int solution(int bridge_length, int weight, int[] truck_weights) {        Queue queue = new LinkedList ("/>
+        <meta name="description" content="프로그래머스 스택/큐(3)기능개발
+
+나의 풀이    
+
+
+
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+
+        Queue queu"/>
     
 
     <!--Author-->
@@ -23,12 +34,23 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="다리를 지나는 트럭"/>
+        <meta property="og:title" content="프로그래머스-스택-큐3(Java)"/>
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="import java.util.*;class Solution {    public int solution(int bridge_length, int weight, int[] truck_weights) {        Queue queue = new LinkedList ("/>
+        <meta property="og:description" content="프로그래머스 스택/큐(3)기능개발
+
+나의 풀이    
+
+
+
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+
+        Queue queu"/>
     
 
     <!--Open Graph Site Name-->
@@ -55,7 +77,7 @@
 
     <!-- Title -->
     
-    <title>다리를 지나는 트럭 - HYONISSS TIL</title>
+    <title>프로그래머스-스택-큐3(Java) - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -167,7 +189,11 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>다리를 지나는 트럭</h1>
+                    <h1>프로그래머스-스택-큐3(Java)</h1>
+                    
+                    <h2 class="post-subheading">
+                        기능개발
+                    </h2>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -189,31 +215,81 @@
 
             <!-- Tags and categories -->
            
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/java/">#java</a> <a href="/tags/algorithm/">#algorithm</a> <a href="/tags/programmers/">#programmers</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
 
             <!-- Gallery -->
             
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>import java.util.*;<br>class Solution {<br>    public int solution(int bridge_length, int weight, int[] truck_weights) {<br>        Queue<Integer> queue = new LinkedList<Integer> ();<br>        int answer = 0;<br>        for(int truck: truck_weights) {<br>            for(int i=0; i&lt;bridge_length; i++) {<br>                if(queue.)<br>            }<br>            while(queue.size()&lt;=length) </p>
-<pre><code>        if(queue.isEmpty()) { //다리를 건너는 트럭이 없으면 트럭 집어넣기
-            queue.offer(truck);
+                <h2 id="프로그래머스-스택-큐-3"><a href="#프로그래머스-스택-큐-3" class="headerlink" title="프로그래머스 스택/큐(3)"></a>프로그래머스 스택/큐(3)</h2><h4 id="기능개발"><a href="#기능개발" class="headerlink" title="기능개발"></a>기능개발</h4><hr>
+<blockquote>
+<p>나의 풀이    </p>
+</blockquote>
+<pre>
+<code>
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[] progresses, int[] speeds) {
+
+        Queue<Integer> queue = new LinkedList<Integer> ();     // 배포 날짜를 담을 큐
+        List<Integer> ans = new ArrayList<Integer> ();                // 정답을 담아둘 ArrayList
+        for(int i=0; i<progresses.length; i++) {                              // 배포 날짜를 계산하는 for문
+            int temp = (100-progresses[i]) / speeds[i];
+             if((100-progresses[i]) % speeds[i] ==0) 
+                 queue.add(temp);                                       
+             else 
+                 queue.add(temp+1);
         }
-        else {        
-
-            //다리를 건너는 트럭이 있으면 다음 실행
-            while(!queue.isEmpty()) { //트럭 무게 고려 조건문
-                int cur_weight += queue.peek(); //다리 위의 트럭 무게 다 더하기
-                int to_weight = truck + cur_weight; //새로 들어갈 트럭 무게까지 더하기
-                 if(to_weight&lt;=weight) {//그 무게의 합이 다리가 견디는 무게보다 작거나 같으면
-                     queue.offer(truck); //현재 트럭 집어 넣기
-                }
-
+        while(!queue.isEmpty()) {
+            if(queue.size()==1) {                                                      //큐에 1개만 남았을 경우  정답에 1 삽입  
+                ans.add(1);                                                        
+                queue.remove();
             }
-        }          
-    }      
-    return answer;
-}</code></pre><p>}</p>
+            else {
+                int standard = queue.poll();               
+                int count = 0;                                                          // 몇개까지 같이 반환할 건지 계산하는 변수
+                while(standard >= queue.peek()) {                         // 자신보다 작은 배포시간이 몇개인지 계산
+                queue.poll();                                                           // 배포시간이 작은게 확인되면 제거
+                count++;
+                }
+                ans.add(1+count);                                                  // 기본 1에 반복된 횟수 더하기
+            }
+         } 
+        int[] answer = new int[ans.size()];                                   // ArrayList사이즈만큼 answer배열 초기화
+        for(int i=0; i<ans.size(); i++) {                                         // 배열에 넣기
+            answer[i] = ans.get(i);
+        }
+        return answer;
+
+    }
+}
+</code>
+</pre>
+
+<hr>
+<ul>
+<li><p>실수했던 부분</p>
+<pre><code>if(queue.size()==1) {                                                      
+           ans.add(1);                                                        
+           queue.remove();
+       }</code></pre></li>
+</ul>
+<p>이 코드를 삽입하지 않아서 Java.lang.NullPointerException 오류가 계속 났다<br>큐에 1개의 요소만 남았을때 바로 다음 while 반복문으로 가게되면, Null이 되기 때문이다.</p>
 
 
                 
