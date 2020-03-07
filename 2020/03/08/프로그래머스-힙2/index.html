@@ -13,6 +13,17 @@
     
 
     
+        <meta name="description" content="프로그래머스 힙(1)더 맵게
+
+나의 풀이   
+
+
+
+import java.util.*;
+class Solution {
+    public int solution(int stock, int[] dates, int[] supplies, int k) {
+        int"/>
+    
 
     <!--Author-->
     
@@ -21,10 +32,21 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="HYONISSS TIL"/>
+        <meta property="og:title" content="프로그래머스-힙2(Java)"/>
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="프로그래머스 힙(1)더 맵게
+
+나의 풀이   
+
+
+
+import java.util.*;
+class Solution {
+    public int solution(int stock, int[] dates, int[] supplies, int k) {
+        int"/>
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +54,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website"/>
+        <meta property="og:type" content="article"/>
     
 
     <!--Page Cover-->
@@ -51,7 +73,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2020/3 - HYONISSS TIL</title>
+    <title>프로그래머스-힙2(Java) - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -155,88 +177,114 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2020/3</h1>
+                <div class="post-heading">
+                    <h1>프로그래머스-힙2(Java)</h1>
+                    
+                    <h2 class="post-subheading">
+                        라면공장
+                    </h2>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-03-08
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/java/">#java</a> <a href="/tags/algorithm/">#algorithm</a> <a href="/tags/programmers/">#programmers</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/03/08/프로그래머스-힙2/">
-        <h1 class="post-title archive">
-            프로그래머스-힙2(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-03-08
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2020/03/07/프로그래머스-힙1/">
-        <h1 class="post-title archive">
-            프로그래머스-힙1(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-03-07
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/03/02/프로그래머스-스택:큐(3)/">
-        <h1 class="post-title archive">
-            프로그래머스-스택/큐3(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-03-02
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/03/01/프로그래머스-스택:큐(2)/">
-        <h1 class="post-title archive">
-            프로그래머스-스택/큐2(Java)
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-03-01
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="프로그래머스-힙-1"><a href="#프로그래머스-힙-1" class="headerlink" title="프로그래머스 힙(1)"></a>프로그래머스 힙(1)</h2><h4 id="더-맵게"><a href="#더-맵게" class="headerlink" title="더 맵게"></a>더 맵게</h4><hr>
+<blockquote>
+<p>나의 풀이   </p>
+</blockquote>
+<pre>
+<code>
+import java.util.*;
+class Solution {
+    public int solution(int stock, int[] dates, int[] supplies, int k) {
+        int answer = 0;
+        int total_stock = stock; //공급받은 재고를 넣을 변수
+        int index = 0; //사용한 i값 저장
+        PriorityQueue<Integer> q = new PriorityQueue<Integer> (Comparator.reverseOrder()); //밀가루가 부족한 시점에 공급받을 수 있는 밀가루의 수량을 담을 MaxHeap
+        while(total_stock < k) {      //공급받은 재고가 K보다 작을 경우
+            for(int i=index; i<dates.length; i++) {
+                if(dates[i]<=total_stock) { //공급이 부족한 시점에 추가로 공급받을 수 있는 시점들
+                    q.add(supplies[i]); //그 시점에 해당하는 밀가루 수량들 모두 큐에 삽입
+                    index = i+1; // 현재 공급받은 날짜 이후의 날짜만 다음번에 참조할거임
+                }
+            }
+            total_stock += q.poll(); //공급받을 수 있는 밀가루 수량 중 가장 큰 것 공급받음
+            answer++; 
+        }       
+        return answer;
+    }
+}
+</code>
+</pre>
+<hr>
+<ul>
+<li><p>MaxHeap을 만드는 방법(우선순위 큐 사용)</p>
+<pre><code>PriorityQueue q = new PriorityQueue (Comparator.reverseOrder());</code></pre></li>
 </ul>
+<p>이 문제에서 Heap이 왜 필요한지 알아차리는게 가장 어려웠다. 결국은 다른사람 풀이를 구글링해서 참조한 뒤 스스로 문제를 풀어보았다.</p>
+<ul>
+<li>그렇다면, 이 문제에서 Heap이 필요한 구간은? </li>
+</ul>
+<p>밀가루가 부족해진 시점에, 내가 공급받을 수 있는 수량들을 다 우선순위 큐에 넣어놓고<br>그 중에 가장 큰 수량을 우선으로 공급받으면 총 공급횟수가 줄어들게 된다.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
