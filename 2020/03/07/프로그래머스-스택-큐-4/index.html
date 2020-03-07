@@ -13,7 +13,16 @@
     
 
     
-        <meta name="description" content="import java.util.*;class Solution {    public int solution(int bridge_length, int weight, int[] truck_weights) {        Queue queue = new LinkedList ("/>
+        <meta name="description" content="프로그래머스 힙(1)더 맵게
+
+나의 풀이   
+
+
+
+import java.util.*;
+class Solution {
+    public int solution(int[] scoville, int K) {
+        PriorityQueue queue = new P"/>
     
 
     <!--Author-->
@@ -23,12 +32,21 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Stack/Queue"/>
+        <meta property="og:title" content="프로그래머스-힙(1)"/>
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="import java.util.*;class Solution {    public int solution(int bridge_length, int weight, int[] truck_weights) {        Queue queue = new LinkedList ("/>
+        <meta property="og:description" content="프로그래머스 힙(1)더 맵게
+
+나의 풀이   
+
+
+
+import java.util.*;
+class Solution {
+    public int solution(int[] scoville, int K) {
+        PriorityQueue queue = new P"/>
     
 
     <!--Open Graph Site Name-->
@@ -55,7 +73,7 @@
 
     <!-- Title -->
     
-    <title>Stack/Queue - HYONISSS TIL</title>
+    <title>프로그래머스-힙(1) - HYONISSS TIL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -167,13 +185,17 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Stack/Queue</h1>
+                    <h1>프로그래머스-힙(1)</h1>
+                    
+                    <h2 class="post-subheading">
+                        더 맵게
+                    </h2>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2020-03-03
+                            2020-03-07
                         
                     </span>
                 </div>
@@ -189,31 +211,116 @@
 
             <!-- Tags and categories -->
            
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/java/">#java</a> <a href="/tags/algorithm/">#algorithm</a> <a href="/tags/programmers/">#programmers</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
 
             <!-- Gallery -->
             
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>import java.util.*;<br>class Solution {<br>    public int solution(int bridge_length, int weight, int[] truck_weights) {<br>        Queue<Integer> queue = new LinkedList<Integer> ();<br>        int answer = 0;<br>        for(int truck: truck_weights) {<br>            for(int i=0; i&lt;bridge_length; i++) {<br>                if(queue.)<br>            }<br>            while(queue.size()&lt;=length) </p>
-<pre><code>        if(queue.isEmpty()) { //다리를 건너는 트럭이 없으면 트럭 집어넣기
-            queue.offer(truck);
+                <h2 id="프로그래머스-힙-1"><a href="#프로그래머스-힙-1" class="headerlink" title="프로그래머스 힙(1)"></a>프로그래머스 힙(1)</h2><h4 id="더-맵게"><a href="#더-맵게" class="headerlink" title="더 맵게"></a>더 맵게</h4><hr>
+<blockquote>
+<p>나의 풀이   </p>
+</blockquote>
+<pre>
+<code>
+import java.util.*;
+class Solution {
+    public int solution(int[] scoville, int K) {
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer> (); 
+        int num1, num2 = 0;
+        int mix_num = 0;
+        int answer = -1;
+        int cnt = 0;
+        for(int sco : scoville) {                   // 우선순위 큐에 다 삽입
+            queue.add(sco);                 
         }
-        else {        
+        while(queue.size()>1) {                 // 마지막 하나 남을 때까지 반복
+         if(queue.peek() < K) {                  // 첫번째 요소(가장 작은 요소)가 K보다 작으면 섞는다
+             num1 = queue.poll();
+             num2 = queue.poll();
+             queue.add(num1 + num2*2);      
+             cnt++;                                         // cnt 1 증가
+         }
+         else{                                              // 첫번째 요소(가장 작은 요소)가 K보다 크면 반복문 나가기
+             answer = cnt;
+             break;
+         }
+        } 
+        if(queue.poll()>K)                              // 마지막 남은 원소 하나가 K보다 크면 성공한거니 횟수 출력
+            answer = cnt;                               
+        return answer;
+    }
+}
+</code>
+</pre>
 
-            //다리를 건너는 트럭이 있으면 다음 실행
-            while(!queue.isEmpty()) { //트럭 무게 고려 조건문
-                int cur_weight += queue.peek(); //다리 위의 트럭 무게 다 더하기
-                int to_weight = truck + cur_weight; //새로 들어갈 트럭 무게까지 더하기
-                 if(to_weight&lt;=weight) {//그 무게의 합이 다리가 견디는 무게보다 작거나 같으면
-                     queue.offer(truck); //현재 트럭 집어 넣기
-                }
+<hr>
+<ul>
+<li><p>우선순위 큐</p>
+<pre><code>PriorityQueue&lt;Integer&gt; queue = new PriorityQueue&lt;Integer&gt; (); </code></pre></li>
+</ul>
+<p>우선순위 큐를 사용하면 힙(Heap)을 구현할 수 있음<br>자동으로 오름차순으로 원소 정렬해서 저장됨</p>
+<hr>
+<blockquote>
+<p>실패했던 코드 </p>
+</blockquote>
+<pre>
+<code>
+import java.util.*;
+class Solution {
+    public int solution(int[] scoville, int K) {
+        PriorityQueue<Integer> queue = new PriorityQueue<Integer> ();
+        int num1, num2 = 0;
+        int mix_num = 0;
+         int answer = 0;
+        for(int sco : scoville) {
+            queue.add(sco);
+        }
+        while(true) {
+         if(queue.peek() < K) {
+             num1 = queue.poll();
+             num2 = queue.poll();
+             queue.add(num1 + num2*2);
+             answer++;
+         }
+         else break;
+        } 
+        return answer;
+    }
+}
+</code>
+</pre>
 
-            }
-        }          
-    }      
-    return answer;
-}</code></pre><p>}</p>
+<hr>
+<ul>
+<li>문제였던 부분   </li>
+</ul>
+<ol>
+<li>K지수 이상으로 만들 수 없을땐 -1을 반환하라고 했는데 그 부분을 반영안했음</li>
+</ol>
+<p>그래서, answer = -1 로 초기화하고 cnt라는 변수를 따로 만들어서 새로 mix 할때마다 cnt++를 해줌<br>그리고 queue.poll()을 했을 때, 반환되는 수(큐에서 제일 작은 값)가 K이상이면 성공했으니 answer에 cnt를 넣어서 반환해줌</p>
+<ol start="2">
+<li><p>while(true)라고 한 것</p>
+<p>마지막까지 K이상인 요소가 안나오면 큐에는 요소 1개가 남게된다. 그러나 처음에 작성했던 코드에서는 요소가 1개임에도 불구하고 또 while 반복문을 돌게 된다. 그리고 마지막 남은 1개 마저 K보다 작을땐 if 조건문 안으로 들어가게 되는데, num1과 num2 둘다 뽑아낼 수가 없다.<br>그래서 다음과 같이 수정했다</p>
+<pre><code>while(queue.size()&gt;1)</code></pre><p>그리고 밖에 if 절을 하나 더 추가해줬다</p>
+<pre><code>if(queue.poll()&gt;K)                             
+answer = cnt;          </code></pre><p>마지막 남은 원소가 K보다 크면 결국 K이상으로 만드는데 성공한 것이니, cnt를 answer에 넣어주는 것이다.</p>
+</li>
+</ol>
 
 
                 
