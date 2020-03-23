@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="cache mechanism simulatorTerm Project on Implemtation of Cache Mechanism
+
+Codes
+(1) Cache.c
+#include &amp;lt;stdio.h&amp;gt;
+/* include header file of &amp;lt;std"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="Hyoeun Park"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="cache simulator"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="cache mechanism simulatorTerm Project on Implemtation of Cache Mechanism
+
+Codes
+(1) Cache.c
+#include &amp;lt;stdio.h&amp;gt;
+/* include header file of &amp;lt;std"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="HYONISSS TIL"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://hyonisss.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://hyonisss.github.iohttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>cache simulator - HYONISSS TIL</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Today Hyoeun Learned</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="noopener">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>cache simulator</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-03-23
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="cache-mechanism-simulator"><a href="#cache-mechanism-simulator" class="headerlink" title="cache mechanism simulator"></a>cache mechanism simulator</h2><h4 id="Term-Project-on-Implemtation-of-Cache-Mechanism"><a href="#Term-Project-on-Implemtation-of-Cache-Mechanism" class="headerlink" title="Term Project on Implemtation of Cache Mechanism"></a>Term Project on Implemtation of Cache Mechanism</h4><hr>
+<ul>
+<li><p>Codes</p>
+<p>(1) Cache.c</p>
+<pre><code>#include &lt;stdio.h&gt;
+/* include header file of &lt;stdio.h&gt; for Standard Input Output */
+#include &lt;string.h&gt;
+/* include header file of &lt;string.h&gt; */
+#include &quot;cache_impl.h&quot;
+/* include header file of &quot;cache_impl.h&quot;*/
+    /* to get the global variables in other files(extend visibility of variances) */
+ extern int num_cache_hits; /* extend the visibility of integer type variance
+ &quot;num_cache_hits&quot; */
+ extern int num_cache_misses; /* extend the visibility of integer type variance
+ &quot;num_cache_misses&quot; */
+ extern int num_bytes; /* extend the visibility of integer type variance &quot;num_bytes&quot; */
+ extern int num_access_cycles;  /* extend the visibility of integer type variance
+ &quot;num_acess_cycles&quot; */
+ extern int global_timestamp; /* extend the visibility of integer type variance
+ &quot;global_timestamp&quot; */
+ /* new variables used in this file */
+ cache_entry_t cache_array[CACHE_SET_SIZE][DEFAULT_CACHE_ASSOC];
+ /* data in cache with size (# of sets X # of associations) : 4x1 for direct, 2x2 for 2-way,
+ 1x4 for fully */
+ int memory_array[DEFAULT_MEMORY_SIZE_WORD];
+ /* data in memory with size of 128 words */
+/* DO NOT CHANGE THE FOLLOWING FUNCTION */
+/* This function is to initialize contents of the main memory */
+void init_memory_content() {
+unsigned char sample_upward[16] = {0x001, 0x012, 0x023, 0x034, 0x045, 0x056, 0x067,
+0x078, 0x089, 0x09a, 0x0ab, 0x0bc, 0x0cd, 0x0de, 0x0ef};
+unsigned char sample_downward[16] = {0x0fe, 0x0ed, 0x0dc, 0x0cb, 0x0ba, 0x0a9, 0x098,
+0x087, 0x076, 0x065, 0x054, 0x043, 0x032, 0x021, 0x010};
+int index, i=0, j=1, gap = 1;
+for (index=0; index &lt; DEFAULT_MEMORY_SIZE_WORD; index++) {
+memory_array[index] = (sample_upward[i] &lt;&lt; 24) | (sample_upward[j] &lt;&lt; 16) |
+ (sample_downward[i] &lt;&lt; 8) | (sample_downward[j]);
+ if (++i &gt;= 16) // cycle
+ i = 0;
+ if (++j &gt;= 16) // cycle
+ j = 0;
+  if (i == 0 &amp;&amp; j == i+gap) //difference of i and j == gap
+ j = i + (++gap); // increases 1 gap and new j for each cycle
+  }
+printf(&quot;mem[%d] = %#x\n&quot;, index, memory_array[index]);
+  }
+ /* DO NOT CHANGE THE FOLLOWING FUNCTION */
+ /* This function is to initialize contents of the cache memory */
+ void init_cache_content() {
+ int i, j;
+ /* initialize cache data */
+ for (i=0; i&lt;CACHE_SET_SIZE; i++) {
+ for (j=0; j &lt; DEFAULT_CACHE_ASSOC; j++) {
+ cache_entry_t *pEntry = &amp;cache_array[i][j];
+ pEntry-&gt;valid = 0; //invalid
+ pEntry-&gt;tag = -1; //no tag
+ pEntry-&gt;timestamp = 0; // no access trial
+ }
+ }
+ }
+ /* DO NOT CHANGE THE FOLLOWING FUNCTION */
+ /* This function is a utility function to print all the cache entries. It will be useful
+ for your debugging */
+ void print_cache_entries() {
+ int i, j, k;
+ //for each set
+ for (i=0; i&lt;CACHE_SET_SIZE; i++) {
+ printf(&quot;\n[Set %d] &quot;, i);
+ // for each entry in a set
+ for (j=0; j &lt;DEFAULT_CACHE_ASSOC; j++) {
+ cache_entry_t *pEntry = &amp;cache_array[i][j];
+ printf(&quot;V: %d Tag: %#x Time: %d Data: &quot;, pEntry-&gt;valid, pEntry-&gt;tag, pEntry-
+ &gt;timestamp);
+ //for each block in a entry
+ for (k=0; k&lt;DEFAULT_CACHE_BLOCK_SIZE_BYTE; k++) {
+ }
+printf(&quot;%#x(%d) &quot;, pEntry-&gt;data[k], k);
+  printf(&quot;\t&quot;);
+ }
+ printf(&quot;\n&quot;);
+ }
+ }
+ /* This function is to return the data in cache */
+ int check_cache_data_hit(void *addr, char type) {
+ int tag,set; /* integer variabe &apos;tag&apos; and &apos;set&apos; is decalred */
+ unsigned long int byteAddress = (unsigned long int)addr; /* addr type converses void
+
+ type into unsigned long integer type */
+ int blockAddress = byteAddress / DEFAULT_CACHE_BLOCK_SIZE_BYTE; /* byteAddress divided
+ by DEFAULT_CACHE_BLOCK_SIZE_BYTE(8) is assigned to blockAddress */
+ tag = blockAddress / CACHE_SET_SIZE; /* blockAddress divided by CACHE_SET_SIZE is
+ assigned to &apos;tag&apos; variable which represents &quot;which block&quot; */
+ set= blockAddress % CACHE_SET_SIZE; /* block address modulo CACHE_SET_SIZE is assigned
+ to &apos;set&apos; variable */
+ num_access_cycles +=CACHE_ACCESS_CYCLE; //add this cache access cycle to global
+ access cycle
+ for (int i = 0; i &lt; DEFAULT_CACHE_ASSOC; i++) { /* check all entries in set , Direct
+ for 1 time, 2-way for 2 times, fully for 4 times */
+ if (((cache_array[set][i].valid) == 1) &amp;&amp; (tag == cache_array[set][i].tag))
+ { /* if valid bit is present and tag is same, hit */
+ num_cache_hits++; /* increment num_cache_hits */
+ cache_array[set][i].timestamp = global_timestamp; /* update timestamp
+ of this entry by same amount of global_timestamp to record most recent access */
+ if (type == &apos;b&apos;) // if type is byte(1 byte)
+ return
+ *(&amp;cache_array[set][i].data[byteAddress%DEFAULT_CACHE_BLOCK_SIZE_BYTE]); // return
+ cache_array[byte_offset] with byte type(1 byte)
+ else if (type == &apos;h&apos;) // if type is halfword(2 bytes)
+ cache_array[byte_offset] with halfword type(2 bytes)
+return *((short
+ *)&amp;cache_array[set][i].data[byteAddress%DEFAULT_CACHE_BLOCK_SIZE_BYTE]); // return
+  else if (type == &apos;w&apos;) // if type is word(4 bytes)
+ return *((int
+ *)&amp;cache_array[set][i].data[byteAddress%DEFAULT_CACHE_BLOCK_SIZE_BYTE]); // // return
+ cache_array[byte_offset] with wprd type(4 bytes)
+ }
+}
+//return cache_array[set][i].data;/* Return the data */
+   /* If there is no data in cache, data is missed and return -1 */
+ num_cache_misses++; /* increment num_cache_misses by 1 */
+ return -1; /* return -1 for cache miss */
+ }
+ int find_entry_index_in_set(int cache_index) { //fint the entry of the useable cache
+ int entry_index; //cache entry index
+ /* Check if there exists any empty cache space by checking &apos;valid&apos; */
+ for (int i = 0; i &lt; DEFAULT_CACHE_ASSOC; i++) { //find cache entry index from
+ begininng to end
+ if (cache_array[cache_index][i].valid == 0) { //if
+ cache_array[cache_index][i].valid == 0, it can be used
+ entry_index = i; // store i in entry_index
+ return entry_index; //return the value of entry_index
+ }//if end
+ }//for end
+ /* Otherwise, search over all entries to find the least recently used entry by
+ checking &apos;timestamp&apos; */
+
+ if (DEFAULT_CACHE_ASSOC == 1) //&quot;DEFAULT_CACHE_ASSOC == 1&quot; means it is direct mapped
+ cache
+ return 0; //return 0
+ int checkTimestamp = cache_array[0][0].timestamp; //checkTimestamp is LRU and
+ initialize checkTimestamp to the first of cache timestamp
+ for (int j = 0; j &lt; DEFAULT_CACHE_ASSOC; j++) { //check what cache timestamp is the
+ smallest value
+ if (checkTimestamp &gt; cache_array[cache_index][j].timestamp) //if
+ checkTimestamp value is larger than cache_array[cache_index][j].timestamp
+ checkTimestamp = cache_array[cache_index][j].timestamp; //store
+ cache_array[cache_index][j].timestamp in checkTimestamp
+ }//for end
+ for (int i = 0; i &lt; DEFAULT_CACHE_ASSOC; i++) {//check that checkTimestamp is same the
+ cache_array[cache_index][i].timestamp
+ if (checkTimestamp == cache_array[cache_index][i].timestamp) { // if
+ checkTimestamp is equal to the cache_array[cache_index][i].timestamp
+ entry_index = i;// store i in entry_index
+ }//if end
+ }//for loop end
+return entry_index; //return the value of entry_index
+}
+   int access_memory(void *addr, char type) { // access memory for search the data
+ *addr: addr is byte address, whereas your main memory address is word address due to &apos;int
+/* void
+  memory_array[]&apos; */
+ unsigned long int byteAddress = (unsigned long int)addr; //addr type converses void
+ type into unsigned long int type
+ int blockAddress = byteAddress / DEFAULT_CACHE_BLOCK_SIZE_BYTE;// get the value of
+ blockAddress(blockAddress is byteAddress / DEFAULT_CACHE_BLOCK_SIZE_BYTE)
+ int tag = blockAddress / CACHE_SET_SIZE;// get the value of the tag(tag is
+ blockAddress / CACHE_SET_SIZE)
+ int set = blockAddress % CACHE_SET_SIZE; // get the value of the set(set is
+ blockAddress % CACHE_SET_SIZE)
+  /* You need to invoke find_entry_index_in_set() for copying to the cache */
+ int index = find_entry_index_in_set(set); //get the entry index by invoking
+ find_entry_index_in_set() for copying to the cache
+ num_access_cycles += MEMORY_ACCESS_CYCLE; //update num_access_cycles by adding
+ MEMORY_ACCESS_CYCLE
+  /* Fetch the data from the main memory and copy them to the cache */
+ memcpy(cache_array[set][index].data,
+ &amp;memory_array[(blockAddress*DEFAULT_CACHE_BLOCK_SIZE_BYTE) / WORD_SIZE_BYTE],
+ DEFAULT_CACHE_BLOCK_SIZE_BYTE);
+
+// copy from memory_array[(blockAddress*DEFAULT_CACHE_BLOCK_SIZE_BYTE) /
+WORD_SIZE_BYTE] to cache_array[set][index].data by WORD_SIZE_BYTE
+cache_array[set][index].valid = 1; // update cache_array[set][index].valid to 1
+cache_array[set][index].tag = tag; //update cache_array[set][index].tag
+cache_array[set][index].timestamp = global_timestamp; // store global_timestamp into
+cache_array[set][index].timestamp
+return
+/* Return the accessed data with a suitable type */
+if (type == &apos;b&apos;)  //if type is &apos;b&apos;
+*(&amp;cache_array[set][index].data[byteAddress%DEFAULT_CACHE_BLOCK_SIZE_BYTE]); //read as
+much as 1byte in cache_array[set][index].data[byteAddress%DEFAULT_CACHE_BLOCK_SIZE_BYTE]
+else if (type == &apos;h&apos;)//if type is &apos;h&apos;
+return   *((short
+*)&amp;cache_array[set][index].data[byteAddress%DEFAULT_CACHE_BLOCK_SIZE_BYTE]); //read as
+much as 2bytes in cache_array[set][index].data[byteAddress%DEFAULT_CACHE_BLOCK_SIZE_BYTE]
+else if (type == &apos;w&apos;)//if type is &apos;w&apos;
+return *((int
+*)&amp;cache_array[set][index].data[byteAddress%DEFAULT_CACHE_BLOCK_SIZE_BYTE]); //read as
+much as 4bytes in cache_array[set][index].data[byteAddress%DEFAULT_CACHE_BLOCK_SIZE_BYTE]
+return -1; // Cannot find a suitable type error
+}</code></pre></li>
+</ul>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 Hyoeun Park<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
